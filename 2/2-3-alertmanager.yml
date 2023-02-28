@@ -1,0 +1,10 @@
+global:
+  smtp_smarthost: 'localhost:25'
+  smtp_from: 'yourprometheus@example.org' <1>
+route:
+  receiver: example-email
+  group_by: [alertname]
+receivers:
+ - name: example-email
+   email_configs:
+    - to: 'youraddress@example.org' <2>
